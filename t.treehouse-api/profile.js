@@ -63,7 +63,7 @@ function get(username) {
             });
             } else {
                 const message = `There was an error getting the profile for ${username} (${http.STATUS_CODES[res.statusCode]})`;
-                const statusCodeError = new Error(message);
+                const statusCodeError = new Error(message + '\nMake sure users profile name is spelled correctly...');
                 PrintError(statusCodeError);
             }
             //dir is great for debugging
